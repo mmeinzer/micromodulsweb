@@ -15,7 +15,7 @@ class BlogPostTemplate extends React.Component {
         <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
         <h1>{post.frontmatter.title}</h1>
         <p>
-          {post.frontmatter.date}
+          {post.frontmatter.date} | {post.timeToRead} minute read
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
@@ -36,6 +36,7 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       id
       html
+      timeToRead
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
