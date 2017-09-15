@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "Micro Moduls",
+    title: "µModūls",
     author: "Tyler Maschino",
   },
   plugins: [

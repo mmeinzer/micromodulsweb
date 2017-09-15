@@ -11,22 +11,21 @@ class Template extends React.Component {
       header = (
         <h1>
           <Link to={'/'} >
-            Micro Moduls
+            <Logo />
           </Link>
-          <Logo />
         </h1>
       )
     } else {
       header = (
         <h3>
           <Link to={'/'}>
-            Micro Moduls
+            <Logo />
           </Link>
         </h3>
       )
     }
     return (
-      <div>
+      <div style={{ backgroundColor: "rgb(251, 250, 252)", height: "100vh"}}>
         {header}
         {children()}
       </div>

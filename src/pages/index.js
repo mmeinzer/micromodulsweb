@@ -9,21 +9,23 @@ class BlogIndex extends React.Component {
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
 
     return (
-      <div>
-        <Helmet title={get(this, 'props.data.site.siteMetadata.title')} />
+      <div style={{maxWidth: "36.4rem", position: "relative", margin: "0px auto"}}>
+        <Helmet>
+          <title>{siteTitle}</title>
+        </Helmet>
         {posts.map(post => {
-          if (post.node.path !== '/404/') {
-            const title = get(post, 'node.frontmatter.title') || post.node.path
+          if (post.node.frontmatter.path !== '/404/') {
+            const title = get(post, 'node.frontmatter.title') || post.node.frontmatter.path
             return (
-              <div key={post.node.frontmatter.path}>
+              <article key={post.node.frontmatter.path} style={{boxShadow: "rgba(25, 17, 34, 0.05) 0px 3px 10px", background: "white", padding: "2.1rem 3.15rem", margin: "0 -2rem 1rem -2rem"}}>
                 <h3>
                   <Link to={post.node.frontmatter.path} >
-                    {post.node.frontmatter.title}
+                    {title}
                   </Link>
                 </h3>
                 <small>{post.node.frontmatter.date}</small>
                 <p dangerouslySetInnerHTML={{ __html: post.node.excerpt }} />
-              </div>
+              </article>
             )
           }
         })}
