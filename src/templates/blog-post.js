@@ -2,8 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
-
-import Bio from '../components/Bio'
+import Logo from '../components/Logo'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -11,8 +10,9 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
 
     return (
-      <div style={{ margin: '3rem auto', maxWidth: 600 }}>
+      <div style={{ margin: '3rem auto', maxWidth: 600, display: "flex", flexDirection: "column", alignItems: "center" }}>
         <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
+        <Logo />
         <h1>{post.frontmatter.title}</h1>
         <p>
           {post.frontmatter.date} | {post.timeToRead} minute read

@@ -1,6 +1,8 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
+import Logo from '../components/Logo'
+
 class Template extends React.Component {
   render() {
     const { location, children } = this.props
@@ -11,6 +13,7 @@ class Template extends React.Component {
           <Link to={'/'} >
             Micro Moduls
           </Link>
+          <Logo />
         </h1>
       )
     } else {
