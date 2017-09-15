@@ -25,18 +25,12 @@ class Template extends React.Component {
       )
     }
     return (
-      <div style={{ backgroundColor: "rgb(251, 250, 252)", height: "100vh"}}>
+      <div>
         {header}
         {children()}
       </div>
     )
   }
-}
-
-Template.propTypes = {
-  children: React.PropTypes.func,
-  location: React.PropTypes.object,
-  route: React.PropTypes.object,
 }
 
 export default Template
