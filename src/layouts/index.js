@@ -25,7 +25,7 @@ class Template extends React.Component {
       )
     }
     return (
-      <div style={{overflow: "auto", minHeight: "100vh", background: "#f8f8f6"}}>
+      <div style={{overflow: "auto", minHeight: "100vh", background: "#FDFDFD"}}>
         {header}
         {children()}
       </div>
