@@ -19,7 +19,7 @@ class BlogIndex extends React.Component {
             return (
               <article key={post.node.frontmatter.path} style={{boxShadow: "rgba(25, 17, 34, 0.05) 0px 3px 10px", background: "white", padding: "2.1rem 3.15rem", margin: "0 -2rem 1rem -2rem"}}>
                 <h3>
-                  <Link to={post.node.frontmatter.path} >
+                  <Link to={post.node.frontmatter.path} style={{textDecoration: "none"}}>
                     {title}
                   </Link>
                 </h3>
